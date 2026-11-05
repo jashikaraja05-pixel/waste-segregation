@@ -14,7 +14,57 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      scans: {
+        Row: {
+          bin: string
+          category: string
+          confidence: number | null
+          created_at: string
+          feedback: string | null
+          id: string
+          image: string
+          item: string
+          reasoning: string
+          source: string
+          steps: Json
+          user_id: string
+          verified_at: string | null
+          verified_category: string | null
+        }
+        Insert: {
+          bin: string
+          category: string
+          confidence?: number | null
+          created_at?: string
+          feedback?: string | null
+          id?: string
+          image: string
+          item: string
+          reasoning: string
+          source?: string
+          steps?: Json
+          user_id: string
+          verified_at?: string | null
+          verified_category?: string | null
+        }
+        Update: {
+          bin?: string
+          category?: string
+          confidence?: number | null
+          created_at?: string
+          feedback?: string | null
+          id?: string
+          image?: string
+          item?: string
+          reasoning?: string
+          source?: string
+          steps?: Json
+          user_id?: string
+          verified_at?: string | null
+          verified_category?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
