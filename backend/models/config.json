@@ -1,0 +1,70 @@
+{
+  "arch": "mobilenet_v3_small",
+  "num_classes": 13,
+  "classes": [
+    "battery",
+    "biological",
+    "brown-glass",
+    "cardboard",
+    "clothes",
+    "e-waste",
+    "green-glass",
+    "metal",
+    "paper",
+    "plastic",
+    "shoes",
+    "trash",
+    "white-glass"
+  ],
+  "idx_to_class": {
+    "0": "battery",
+    "1": "biological",
+    "2": "brown-glass",
+    "3": "cardboard",
+    "4": "clothes",
+    "5": "e-waste",
+    "6": "green-glass",
+    "7": "metal",
+    "8": "paper",
+    "9": "plastic",
+    "10": "shoes",
+    "11": "trash",
+    "12": "white-glass"
+  },
+  "class_to_category": {
+    "battery": "hazardous",
+    "biological": "organic",
+    "brown-glass": "recyclable",
+    "green-glass": "recyclable",
+    "white-glass": "recyclable",
+    "cardboard": "recyclable",
+    "clothes": "residual",
+    "e-waste": "ewaste",
+    "metal": "recyclable",
+    "paper": "recyclable",
+    "plastic": "recyclable",
+    "shoes": "residual",
+    "trash": "residual"
+  },
+  "image_size": 224,
+  "normalization": {
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  },
+  "uncertain_threshold": 55,
+  "dataset_name": "garbage_classification",
+  "dataset_licences": {
+    "trashnet": "MIT (c) 2017 Gary Thung \u2014 github.com/garythung/trashnet/LICENSE",
+    "garbage12": "Kaggle mostafaabla/garbage-classification (12 classes, NO e-waste class) \u2014 check licence on Kaggle before redistribution",
+    "giz_ewaste": "CC BY 4.0 \u2014 huggingface.co/datasets/GIZ/E-Waste-Database (all images are e-waste)"
+  },
+  "trained_at": "2026-11-06T06:29:28Z"
+}

@@ -1,3 +1,5 @@
+
+
 # Logs
 logs
 *.log
@@ -7,6 +9,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies and build output
 node_modules
 dist
 dist-ssr
@@ -37,9 +40,20 @@ __pycache__/
 .venv/
 .pytest_cache/
 backend/data/
+
+# Ignore model files by default
 backend/models/
 *.pt
 
-# Local secrets
+# Include trained waste classification model and reports
+!backend/models/
+!backend/models/best.pt
+!backend/models/config.json
+!backend/models/evaluation_report.json
+!backend/models/training_summary.json
+
+# Protect environment files and secrets
+.env
+.env.*
+!.env.example
 backend/.env
-.env.local

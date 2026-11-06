@@ -1,0 +1,133 @@
+{
+  "best_val_acc": 0.966,
+  "best_epoch": 23,
+  "epochs_run": 25,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.5285,
+      "val_acc": 0.9132
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.2641,
+      "val_acc": 0.9402
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.2107,
+      "val_acc": 0.9361
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.1632,
+      "val_acc": 0.9423
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.142,
+      "val_acc": 0.9414
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.128,
+      "val_acc": 0.9529
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.0935,
+      "val_acc": 0.948
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.0867,
+      "val_acc": 0.9484
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.0782,
+      "val_acc": 0.9492
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.0766,
+      "val_acc": 0.9541
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.0562,
+      "val_acc": 0.9627
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.051,
+      "val_acc": 0.9537
+    },
+    {
+      "epoch": 13,
+      "train_loss": 0.0431,
+      "val_acc": 0.9631
+    },
+    {
+      "epoch": 14,
+      "train_loss": 0.0335,
+      "val_acc": 0.9627
+    },
+    {
+      "epoch": 15,
+      "train_loss": 0.0315,
+      "val_acc": 0.9595
+    },
+    {
+      "epoch": 16,
+      "train_loss": 0.0266,
+      "val_acc": 0.9619
+    },
+    {
+      "epoch": 17,
+      "train_loss": 0.024,
+      "val_acc": 0.9619
+    },
+    {
+      "epoch": 18,
+      "train_loss": 0.0187,
+      "val_acc": 0.9644
+    },
+    {
+      "epoch": 19,
+      "train_loss": 0.0166,
+      "val_acc": 0.9627
+    },
+    {
+      "epoch": 20,
+      "train_loss": 0.0139,
+      "val_acc": 0.9652
+    },
+    {
+      "epoch": 21,
+      "train_loss": 0.0141,
+      "val_acc": 0.964
+    },
+    {
+      "epoch": 22,
+      "train_loss": 0.0122,
+      "val_acc": 0.9648
+    },
+    {
+      "epoch": 23,
+      "train_loss": 0.0106,
+      "val_acc": 0.966
+    },
+    {
+      "epoch": 24,
+      "train_loss": 0.0115,
+      "val_acc": 0.9631
+    },
+    {
+      "epoch": 25,
+      "train_loss": 0.009,
+      "val_acc": 0.9631
+    }
+  ],
+  "test_metrics": "PENDING \u2014 run evaluate.py; test metrics are produced only from the held-out test split."
+}

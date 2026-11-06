@@ -1,0 +1,314 @@
+{
+  "dataset": "garbage_classification",
+  "test_images": 2438,
+  "accuracy": 0.966,
+  "macro": {
+    "precision": 0.9588,
+    "recall": 0.9575,
+    "f1": 0.958
+  },
+  "weighted": {
+    "precision": 0.9662,
+    "recall": 0.966,
+    "f1": 0.966
+  },
+  "per_class": {
+    "battery": {
+      "precision": 0.9648,
+      "recall": 0.9716,
+      "f1": 0.9682,
+      "support": 141
+    },
+    "biological": {
+      "precision": 0.9864,
+      "recall": 0.9864,
+      "f1": 0.9864,
+      "support": 147
+    },
+    "brown-glass": {
+      "precision": 0.9651,
+      "recall": 0.9121,
+      "f1": 0.9379,
+      "support": 91
+    },
+    "cardboard": {
+      "precision": 0.9627,
+      "recall": 0.9699,
+      "f1": 0.9663,
+      "support": 133
+    },
+    "clothes": {
+      "precision": 0.9911,
+      "recall": 0.98,
+      "f1": 0.9855,
+      "support": 799
+    },
+    "e-waste": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 113
+    },
+    "green-glass": {
+      "precision": 0.9895,
+      "recall": 0.9895,
+      "f1": 0.9895,
+      "support": 95
+    },
+    "metal": {
+      "precision": 0.9554,
+      "recall": 0.9224,
+      "f1": 0.9386,
+      "support": 116
+    },
+    "paper": {
+      "precision": 0.9684,
+      "recall": 0.9745,
+      "f1": 0.9714,
+      "support": 157
+    },
+    "plastic": {
+      "precision": 0.8769,
+      "recall": 0.8837,
+      "f1": 0.8803,
+      "support": 129
+    },
+    "shoes": {
+      "precision": 0.9385,
+      "recall": 0.9797,
+      "f1": 0.9587,
+      "support": 296
+    },
+    "trash": {
+      "precision": 0.9439,
+      "recall": 0.9712,
+      "f1": 0.9573,
+      "support": 104
+    },
+    "white-glass": {
+      "precision": 0.9217,
+      "recall": 0.906,
+      "f1": 0.9138,
+      "support": 117
+    }
+  },
+  "confusion_matrix": {
+    "classes": [
+      "battery",
+      "biological",
+      "brown-glass",
+      "cardboard",
+      "clothes",
+      "e-waste",
+      "green-glass",
+      "metal",
+      "paper",
+      "plastic",
+      "shoes",
+      "trash",
+      "white-glass"
+    ],
+    "rows_true_cols_pred": [
+      [
+        137,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        145,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        83,
+        1,
+        0,
+        0,
+        0,
+        2,
+        0,
+        3,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        129,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        1,
+        783,
+        0,
+        0,
+        0,
+        1,
+        0,
+        12,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        113,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        94,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        2,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        107,
+        0,
+        3,
+        2,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        153,
+        2,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        2,
+        114,
+        2,
+        1,
+        6
+      ],
+      [
+        1,
+        1,
+        0,
+        0,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        290,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        101,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        2,
+        0,
+        5,
+        0,
+        2,
+        106
+      ]
+    ]
+  },
+  "latency_ms": {
+    "mean": 10.7,
+    "p50": 9.0,
+    "p95": 12.2
+  }
+}
