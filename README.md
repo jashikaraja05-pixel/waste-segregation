@@ -11,7 +11,7 @@
 | Institution | Rathinam Technical Campus |
 | GitHub | <https://github.com/jashikaraja05-pixel/waste-segregation> |
 | Live demo | <https://eco-lens-waste.lovable.app> |
-| Demo video | [Watch ECO-LENSAI Demo](https://drive.google.com/file/d/1YGdSYP2cZFC_ar5uKUi2GesWO0AZiHfv/view?usp=sharing) |
+| Demo video | [Watch ECO-LENS-AI Demo](https://drive.google.com/file/d/1YGdSYP2cZFC_ar5uKUi2GesWO0AZiHfv/view?usp=sharing) |
 
 ![Sign-in screen](docs/screenshots/auth.png)
 
@@ -45,15 +45,24 @@ ECO-LENSAI lets anyone photograph a waste item (upload or live camera). AI-assis
 ## 5. System architecture
 
 ```mermaid
+
 flowchart TD
-  A[Browser: React + TanStack Start] -->|photo as data URL| B[classifyWaste server function<br/>sign-in required, validates image]
-  B -->|PYTHON_CLASSIFIER_URL set| C[Python FastAPI /classify]
-  C --> C1[Local MobileNetV3 model<br/>only if trained weights exist]
-  C --> C2[Vision API fallback<br/>only if AI_API_KEY set]
-  B -->|default| D[Lovable AI Gateway<br/>vision model openai/gpt-6-astra]
-  B --> E[normalizePrediction<br/>server-owned bins + 55% rule]
-  E --> F[(Lovable Cloud Postgres: scans<br/>row-level security: own rows only)]
-  A -->|read history / dashboard| F
+    A["User"] --> B["ECO-LENS-AI Web App"]
+    B --> C["Image Upload / Live Camera"]
+    C --> D["Authentication & Image Validation"]
+    D --> E["Lovable AI Gateway"]
+    E --> F["AI Waste Classification"]
+    F --> G["Normalize Prediction"]
+    G --> H{"Confidence >= 55%?"}
+    H -->|Yes| I["Category & Bin Recommendation"]
+    H -->|No| J["Uncertain - Rescan"]
+    I --> K["Save Scan to Database"]
+    K --> L["Dashboard & Scan History"]
+    J --> M["Display Rescan Guidance"]
+
+    D -. "Optional integration" .-> N["Python FastAPI Service"]
+    N -.-> O["MobileNetV3 Model - Not Yet Trained"]
+
 ```
 
 **What runs today:** the deployed app classifies through the **Lovable AI Gateway** (a general vision model). The Python service is optional and **not deployed**; its local model is **not trained yet**. If the Python service is configured but unreachable, the scan fails visibly. The app never falls back to another engine without telling you.
@@ -195,6 +204,34 @@ This account contains previously tested waste classification results, scan histo
 Judges can also create their own account using their email address, set a password and complete email verification to explore the application.
 
 Each account can access only its own scan history.
+
+### How Judges Can Evaluate ECO-LENS-AI
+
+1. Open the [Live Application](https://eco-lens-waste.lovable.app).
+2. Sign in using the evaluation account.
+3. Navigate to the Waste Scanner.
+4. Upload an image of a waste item.
+5. View the AI classification result.
+6. Check the recommended waste bin and disposal instructions.
+7. Open Scan History to view saved results.
+8. Visit the Dashboard to explore scan statistics.
+9. Explore the Learn Hub for waste management guidance.
+
+### Test Case Results
+
+| Test Case | Expected Result | Status |
+|---|---|---|
+| Plastic bottle image | Recyclable – Blue Bin | Passed |
+| Low-confidence prediction | Uncertain – Request rescan | Passed (unit test) |
+| Invalid image upload | Reject invalid upload | Passed (unit test) |
+| Oversized image upload | Reject oversized upload | Passed (unit test) |
+| User data isolation | Users can access only their own scan history | Passed |
+| Dashboard statistics | Calculate statistics from saved scans | Passed (unit test) |
+
+**Testing Summary:**
+- Web unit tests: 16/16 passed.
+- Python tests: 16 passed, 3 skipped.
+- End-to-end test: Plastic bottle successfully classified as Recyclable and saved to scan history.
 
 ## Screenshots
 
